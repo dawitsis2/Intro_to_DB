@@ -1,11 +1,10 @@
 -- Use the alx_book_store database
 USE alx_book_store;
 
--- Create authors table
+-- Create authors table with the column 'author_name'
 CREATE TABLE IF NOT EXISTS authors (
     author_id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(100) NOT NULL,
-    last_name VARCHAR(100) NOT NULL,
+    author_name VARCHAR(200) NOT NULL,  -- Combined first and last name
     bio TEXT
 );
 
