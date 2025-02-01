@@ -31,11 +31,13 @@ CREATE TABLE IF NOT EXISTS Orders (
 );
 
 -- Create the Order Details table
+-- Create the Order_Details table
 CREATE TABLE IF NOT EXISTS Order_Details (
-    order_detail_id INT AUTO_INCREMENT PRIMARY KEY,
+    orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL,
     book_id INT NOT NULL,
-    quantity INT NOT NULL CHECK (quantity > 0),
-    FOREIGN KEY (order_id) REFERENCES Orders(order_id) ON DELETE CASCADE,
-    FOREIGN KEY (book_id) REFERENCES Books(book_id) ON DELETE CASCADE
+    quantity DOUBLE NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+    FOREIGN KEY (book_id) REFERENCES Books(book_id)
 );
+
